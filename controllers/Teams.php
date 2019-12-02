@@ -15,6 +15,9 @@ class Teams extends Controller
     ]);
   }
 
-  
-
+  public function showTeam(int $id)
+    $this->render('views/showTeam.php', [
+      'team'=> $this->modelTeams->getTeams($id),
+      'coach'=> (new ModelCoachs)->getCoachByTeam($id)
+    ]);
 }
