@@ -23,9 +23,9 @@ $route = $data[0] ? $data[0] : 'teams';
 
 
 if ($route === 'teams') {
- $controller = new Teams;
- // on appelle la méthode la classe Teams
- $controller->listTeams();
+  $controller = new Teams;
+  // on appelle la méthode la classe Teams
+  $controller->listTeams();
 }
 
 
