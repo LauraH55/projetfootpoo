@@ -1,7 +1,7 @@
 <?php
 
 namespace Models;
-use Entites\Team AS EntityTeam;
+
 class Teams extends Model
 {
   public function getTeams ()

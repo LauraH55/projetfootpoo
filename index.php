@@ -1,7 +1,8 @@
 <?php
 // Dire au fichier qu'on utilise cette classe
-use Controllers\Errors;
+
 use Controllers\Teams;
+use Controllers\Coachs;
 
 
 // charge les classes...
@@ -32,10 +33,14 @@ if ($route === 'teams') {
     $controller->listTeams();
   }
 
-} else {
-  $controller = new Errors;
-  $controller->error404();
-}
+} 
 
+if ($route === 'coachs') {
+  $controller = new Coachs;
+  // on appelle la méthode la classe Teams
+  if (isset($data[1])) {
+    $controller->showCoach($data[1]);
+  }
+}
 
 ?>
