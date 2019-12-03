@@ -8,14 +8,14 @@ class Teams extends Model
   {
     $stmt = $this->db->prepare('SELECT * FROM teams');
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Team');
+    return $stmt->fetchAll();
   }
 
   public function getTeam($id)
   {
     $stmt = $this->db->prepare('SELECT * FROM teams WHERE id = :id');
-    $stmt->bindParam(':id', $id);
+    $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchObject('Entities\Team');
+    return $stmt->fetch();
   }
 }

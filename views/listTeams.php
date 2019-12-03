@@ -5,10 +5,10 @@
     <?php foreach ($teams as $team) { ?>
       <div class="card-deck col-md-3 mt-5 carte">
         <div class="card">
-         <img src="<?php echo $team->getLogo();?>" class="card-img-top logo" alt="...">
+         <img src="<?php echo $team['logo'];?>" class="card-img-top logo" alt="...">
          <div class="card-body">
            <h5 class="card-title">
-             <a href="teams/<?php echo $team->getId(); ?>"><?php echo $team->getName();?></a>
+             <a href="teams/<?php echo $team['id']; ?>"><?php echo $team['name'];?></a>
            </h5>
          </div>
         </div>
