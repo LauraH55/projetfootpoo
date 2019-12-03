@@ -3,6 +3,7 @@
 use Controllers\Errors;
 use Controllers\Teams;
 
+
 // charge les classes...
 spl_autoload_register(function ($class) {
   $parts = explode('\\', $class);
@@ -29,7 +30,7 @@ if ($route === 'teams') {
     $controller->showTeam($data[1]);
   } else {
     $controller->listTeams();
-}
+  }
 
 } else {
   $controller = new Errors;

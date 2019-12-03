@@ -84,9 +84,9 @@ class Team extends Entity
      *
      * @return \DateTime
      */
-    public function getFundationDate()
+    public function getFundationDate():\DateTime
     {
-        return new \DateTime($this->fundationDate);
+        return new \DateTime($this->fundation_date);
     }
 
     /**

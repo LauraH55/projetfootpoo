@@ -6,18 +6,24 @@ use Models\Teams as ModelTeams;
 
 class Teams extends Controller
 {
+  private $model;
+  public function __construct()
+  {
+    $this->model = new ModelTeams;
+  }
+
   public function listTeams()
   {
-    $model = new ModelTeams;
-    $teams = $model->getTeams();
     $this->render('views/listTeams.php', [
-      'teams' => $teams,
+      'teams' => $this->model->getTeams()
     ]);
   }
 
   public function showTeam(int $id)
+  {
     $this->render('views/showTeam.php', [
-      'team'=> $this->modelTeams->getTeams($id),
-      'coach'=> (new ModelCoachs)->getCoachByTeam($id)
+      'team' => $this->model->getTeam($id)
     ]);
+
+  }
 }
