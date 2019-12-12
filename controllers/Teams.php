@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Models\Teams as ModelTeams;
 use Models\Coachs as ModelCoachs;
+use Models\Players as ModelPlayers;
 
 class Teams extends Controller
 {
@@ -22,10 +23,15 @@ class Teams extends Controller
 
   public function showTeam(int $id)
   {
+    $modelPlayer = new ModelPlayers;
+
     $this->render('views/showTeam.php', [
       'team' => $this->model->getTeam($id),
-      'coach' => (new ModelCoachs)->getCoachByTeam($id)
+      'coach' => (new ModelCoachs)->getCoachByTeam($id),
+      'players' => $modelPlayer->getPlayersByTeam($id),
     ]);
 
   }
+
+
 }
