@@ -25,10 +25,17 @@ class Teams extends Controller
   {
     $modelPlayer = new ModelPlayers;
 
+
+
+
     $this->render('views/showTeam.php', [
       'team' => $this->model->getTeam($id),
       'coach' => (new ModelCoachs)->getCoachByTeam($id),
       'players' => $modelPlayer->getPlayersByTeam($id),
+      'matchsPlayed' => $this->model->getMatchsPlayed($id),
+      'matchsNotPlayed' => $this->model->getMatchsNotPlayed($id),
+
+
     ]);
 
   }
