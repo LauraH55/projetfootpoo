@@ -87,3 +87,33 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="dropdown menudr">
+    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseExample">
+     Administratif <?php echo $team['name']; ?>
+    </button>
+    <div class="collapse bg-light" id="collapse3">
+      <table style="font-family: 'Dosis', sans-serif;" class="table">
+            <tr scope="col"> <td>Site : <strong><?php echo $team['website']; ?></strong></td> </tr>
+            <tr scope="col"><td>Siège : <strong><?php echo $team['adress']; ?></strong></td></tr>
+          </table>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="dropdown menudr">
+    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseExample">
+     Stade <?php echo $team['name']; ?>
+    </button>
+    <div class="collapse bg-light" id="collapse4">
+      <table style="font-family: 'Dosis', sans-serif;" class="table">
+          <tr style="font-family: 'Dosis', sans-serif;">
+            <tr scope="col"> <td>Stade : <strong><?php echo $stadium['name']; ?></strong></td></tr>
+            <tr scope="col"> <td>Capacité : <strong><?php echo $stadium['capacity']; ?></strong></td></tr>
+            <tr scope="col"> <td>Adresse du stade : <strong><?php echo $stadium['adress']; ?></strong></td></tr>
+            <tr scope="col"> <td>Tél. Stade : <strong><?php echo $stadium['tel']; ?></strong></td></tr>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>

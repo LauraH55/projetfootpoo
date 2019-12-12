@@ -46,6 +46,14 @@ class Teams extends Model
 
   }
 
+  public function getStadium($id) {
+    $stmt = $this->db->prepare('SELECT * FROM stadiums WHERE id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch();
+  }
+
+
 
 
 }
